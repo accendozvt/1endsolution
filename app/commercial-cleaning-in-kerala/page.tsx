@@ -99,8 +99,9 @@ export default function CommercialPage() {
           fill
           priority
           sizes="100vw"
-          className="object-cover opacity-5"
+          className="object-cover"
         />
+        <div className="absolute inset-0 bg-ink/45" />
         <div className="relative mx-auto max-w-7xl px-4 py-20 lg:py-28 text-center">
           <SectionLabel>Commercial Cleaning</SectionLabel>
           <h1 className="mt-3 text-4xl sm:text-5xl font-extrabold text-white">

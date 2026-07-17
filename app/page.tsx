@@ -101,12 +101,13 @@ export default function HomePage() {
           fill
           priority
           sizes="100vw"
-          className="object-cover opacity-5"
+          className="object-cover"
         />
+        <div className="absolute inset-0 bg-ink/45" />
         <div className="relative mx-auto max-w-7xl px-4 py-24 lg:py-36">
           <div className="max-w-3xl">
             <SectionLabel>One End Solution · Kochi, Kerala</SectionLabel>
-            <h1 className="mt-4 text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight">
+            <h1 className="mt-4 text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight text-white">
               Professional Housekeeping &amp; Best Deep Cleaning Service{" "}
               <span className="text-brand-light">in Kochi, Kerala.</span>
             </h1>
