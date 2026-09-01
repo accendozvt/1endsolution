@@ -1,4 +1,7 @@
 export const SITE_URL = "https://1endsolution.com";
+export const SITE_NAME = "One End Solution";
+export const LOCALE = "en-IN";
+export const OG_LOCALE = "en_IN";
 
 export const PHONE_DISPLAY = "+91 70343 79 777";
 export const PHONE_TEL = "+917034379777";

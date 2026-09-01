@@ -30,9 +30,10 @@ export async function generateMetadata({
   const post = BLOG_POSTS.find((p) => p.slug === slug);
   if (!post) return {};
 
-  const url = `${SITE_URL}/blog/${post.slug}/`;
+  const url = `${SITE_URL}/blog/${post.slug}`;
+  const title = `${post.metaTitle} | One End Solution`;
   return {
-    title: `${post.title} - One End Solution`,
+    title,
     description: post.metaDescription,
     alternates: { canonical: url },
     robots: {
@@ -44,7 +45,7 @@ export async function generateMetadata({
     },
     openGraph: {
       type: "article",
-      title: post.title,
+      title,
       description: post.metaDescription,
       url,
       publishedTime: post.publishedDate,
@@ -61,7 +62,7 @@ export default async function BlogPostPage({
   const post = BLOG_POSTS.find((p) => p.slug === slug);
   if (!post) notFound();
 
-  const url = `${SITE_URL}/blog/${post.slug}/`;
+  const url = `${SITE_URL}/blog/${post.slug}`;
   const related = BLOG_POSTS.filter(
     (p) => p.category === post.category && p.slug !== post.slug
   ).slice(0, 3);
@@ -95,7 +96,7 @@ export default async function BlogPostPage({
     "@type": "BreadcrumbList",
     itemListElement: [
       { "@type": "ListItem", position: 1, name: "Home", item: `${SITE_URL}/` },
-      { "@type": "ListItem", position: 2, name: "Blog", item: `${SITE_URL}/blog/` },
+      { "@type": "ListItem", position: 2, name: "Blog", item: `${SITE_URL}/blog` },
       { "@type": "ListItem", position: 3, name: post.title, item: url },
     ],
   };

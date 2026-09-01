@@ -15,7 +15,7 @@ import {
 } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Best Deep Cleaning Service in Kochi - One End Solution",
+  title: "One End Solution — Best Deep Cleaning Service in Kochi",
   description:
     "Discover the best deep cleaning service in Kochi, specializing in both commercial and residential cleaning, offer cleaning, maintenance & sanitization services.",
   alternates: { canonical: SITE_URL },
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     "max-image-preview": "large",
   },
   openGraph: {
-    title: "Best Deep Cleaning Service in Kochi - One End Solution",
+    title: "One End Solution — Best Deep Cleaning Service in Kochi",
     description:
       "Discover the best deep cleaning service in Kochi, specializing in both commercial and residential cleaning, offer cleaning, maintenance & sanitization services.",
     url: SITE_URL,
@@ -385,7 +385,7 @@ export default function HomePage() {
                   href="/residential-cleaning-in-kerala"
                   className="mt-6 inline-flex items-center gap-2 rounded-full bg-brand px-6 py-3 text-sm font-semibold text-white transition hover:bg-brand-light"
                 >
-                  Click here
+                  Explore Residential Cleaning
                   <ArrowIcon />
                 </Link>
               </div>
@@ -416,7 +416,7 @@ export default function HomePage() {
                   href="/commercial-cleaning-in-kerala"
                   className="mt-6 inline-flex items-center gap-2 rounded-full bg-brand px-6 py-3 text-sm font-semibold text-white transition hover:bg-brand-light"
                 >
-                  Click here
+                  Explore Commercial Cleaning
                   <ArrowIcon />
                 </Link>
               </div>

@@ -39,3 +39,8 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Lighthouse reports (raw JSON, regenerate with seo-audit/run-lighthouse.sh)
+/seo-audit/baseline/*.json
+/seo-audit/final/*.json
+/seo-audit/*/lh-errors.log

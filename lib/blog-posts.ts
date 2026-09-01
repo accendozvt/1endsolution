@@ -3,6 +3,7 @@ export type BlogCategory = "Residential" | "Commercial" | "General";
 export type BlogPost = {
   slug: string;
   title: string;
+  metaTitle: string;
   category: BlogCategory;
   metaDescription: string;
   excerpt: string;
@@ -19,6 +20,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "choosing-best-deep-cleaning-service-kochi",
     title: "Choosing the Best Deep Cleaning Service in Kochi: A Buyer's Guide",
+    metaTitle: "Choosing a Cleaning Service in Kochi",
     category: "General",
     metaDescription:
       "Learn what to check before hiring a deep cleaning service in Kochi, from staff training and product safety to pricing transparency and reviews.",
@@ -65,9 +67,10 @@ With over 20 years serving homes and businesses across Kochi and Ernakulam, One 
   {
     slug: "commercial-cleaning-employee-productivity",
     title: "Why Regular Commercial Cleaning Boosts Employee Productivity",
+    metaTitle: "Cleaning & Employee Productivity",
     category: "Commercial",
     metaDescription:
-      "Discover how regular commercial cleaning improves employee focus, reduces sick days, and boosts productivity in Kochi offices.",
+      "Discover how regular commercial cleaning improves employee focus, reduces sick days, and boosts productivity and morale in offices across Kochi and Ernakulam.",
     excerpt:
       "A clean workplace isn't just about appearances — it directly impacts employee health, focus, and output. Here's the science and the practical steps behind it.",
     publishedDate: "2026-07-03",
@@ -104,6 +107,7 @@ For businesses in Kochi looking to create healthier, more productive workplaces,
   {
     slug: "deep-cleaning-checklist-kochi-homes",
     title: "Ultimate Deep Cleaning Checklist for Kochi Homes",
+    metaTitle: "Deep Cleaning Checklist for Kochi Homes",
     category: "Residential",
     metaDescription:
       "Complete room-by-room deep cleaning checklist for Kochi homes, tackling humidity, dust, and grime. Practical tips from Ernakulam's cleaning experts.",
@@ -149,6 +153,7 @@ Keeping a home genuinely clean in Kochi's climate takes more time and the right 
   {
     slug: "professional-cleaning-cost-kochi-pricing-guide",
     title: "How Much Does Professional Cleaning Cost in Kochi? A Pricing Guide",
+    metaTitle: "Cleaning Cost in Kochi: Pricing Guide",
     category: "General",
     metaDescription:
       "Professional cleaning costs in Kochi typically range from ₹1,500 to ₹15,000 depending on space size and service type. See a full local pricing breakdown here.",
@@ -194,6 +199,7 @@ If you'd like an accurate, no-obligation quote based on your actual home or offi
   {
     slug: "office-cleaning-checklist-kochi-business",
     title: "Office Cleaning Checklist Every Kochi Business Should Follow",
+    metaTitle: "Office Cleaning Checklist for Kochi",
     category: "Commercial",
     metaDescription:
       "A practical daily, weekly, and monthly office cleaning checklist for Kochi businesses to maintain hygiene, productivity, and a professional workspace.",
@@ -234,9 +240,10 @@ One End Solution has supported offices across Kochi and Ernakulam for over 20 ye
   {
     slug: "bathroom-deep-cleaning-mold-prevention-kochi",
     title: "Bathroom Deep Cleaning: Preventing Mold & Mildew in Kochi's Humidity",
+    metaTitle: "Bathroom Cleaning & Mold Prevention Kochi",
     category: "Residential",
     metaDescription:
-      "Learn how to prevent mold and mildew in humid Kochi bathrooms with proven deep cleaning techniques, ventilation tips, and expert advice.",
+      "Learn how to prevent mold and mildew in humid Kochi bathrooms with proven deep cleaning techniques, ventilation tips, and expert advice from local pros.",
     excerpt:
       "Kochi's year-round humidity makes bathrooms a magnet for mold. Here's how regular deep cleaning and a few smart habits keep yours spotless and spore-free.",
     publishedDate: "2026-06-05",
@@ -273,6 +280,7 @@ One End Solution has spent over 20 years helping households across Vytilla, Erna
   {
     slug: "water-tank-cleaning-kerala-health-compliance",
     title: "Water Tank Cleaning in Kerala: Why It's Critical for Health & Compliance",
+    metaTitle: "Water Tank Cleaning & Health in Kerala",
     category: "General",
     metaDescription:
       "Discover why regular water tank cleaning is essential for health and compliance in Kerala homes and buildings, plus how often it should be done.",
@@ -318,6 +326,7 @@ One End Solution offers professional water tank cleaning services across Kochi a
   {
     slug: "retail-showroom-cleaning-first-impressions-kochi",
     title: "Retail & Showroom Cleaning: Why First Impressions Matter in Kochi",
+    metaTitle: "Retail & Showroom Cleaning in Kochi",
     category: "Commercial",
     metaDescription:
       "Learn why spotless retail and showroom spaces drive sales in Kochi. Practical cleaning tips for glass, flooring, and displays from One End Solution.",
@@ -357,6 +366,7 @@ First impressions in retail are formed in seconds, and in a market as competitiv
   {
     slug: "move-in-move-out-cleaning-checklist-ernakulam",
     title: "Move-In/Move-Out Cleaning Checklist for Ernakulam Flats & Apartments",
+    metaTitle: "Move-In/Move-Out Cleaning in Ernakulam",
     category: "Residential",
     metaDescription:
       "A room-by-room move-in and move-out cleaning checklist tailored for Ernakulam flats and apartments, covering deposits, hygiene, and Kochi rental norms.",
@@ -399,6 +409,7 @@ Doing a full move-in or move-out clean on your own can take an entire weekend, e
   {
     slug: "onam-festival-cleaning-guide-kerala-homes",
     title: "Onam & Festival Season Cleaning Guide for Kerala Homes",
+    metaTitle: "Onam Festival Cleaning Guide Kerala",
     category: "General",
     metaDescription:
       "Prepare your Kerala home for Onam with this room-by-room deep cleaning checklist covering kitchens, courtyards, pookalam spaces, and guest areas.",
@@ -441,6 +452,7 @@ If a full Onam-ready deep clean feels like too much to manage alongside festival
   {
     slug: "sanitization-disinfection-commercial-spaces",
     title: "Sanitization & Disinfection Best Practices for Commercial Spaces",
+    metaTitle: "Sanitization for Commercial Spaces",
     category: "Commercial",
     metaDescription:
       "Learn proven sanitization and disinfection best practices for offices, retail, and commercial spaces in Kochi. Expert tips on high-touch cleaning and schedules.",
@@ -486,6 +498,7 @@ One End Solution has spent over 20 years helping commercial spaces across Kochi 
   {
     slug: "kitchen-deep-cleaning-guide-kochi",
     title: "Kitchen Deep Cleaning Guide: Removing Grease, Grime & Odors",
+    metaTitle: "Kitchen Deep Cleaning Guide Kochi",
     category: "Residential",
     metaDescription:
       "Step-by-step kitchen deep cleaning guide for Kochi homes covering grease removal, odor control, and grout cleaning suited to Kerala's humidity.",
@@ -530,6 +543,7 @@ A genuinely spotless, odor-free kitchen takes real time and the right products, 
   {
     slug: "pest-control-deep-cleaning-combined-approach",
     title: "Pest Control and Deep Cleaning: Why You Need Both for a Truly Clean Space",
+    metaTitle: "Pest Control & Deep Cleaning Combined",
     category: "General",
     metaDescription:
       "Learn why pest control and deep cleaning work best together for a truly hygienic home or office in Kochi, and how combining both prevents infestations.",
@@ -571,6 +585,7 @@ Coordinating separate cleaning and pest control vendors often means gaps in comm
   {
     slug: "post-construction-cleaning-kochi-builders",
     title: "Post-Construction Cleaning: What Kochi Builders & Developers Need to Know",
+    metaTitle: "Post-Construction Cleaning for Builders",
     category: "Commercial",
     metaDescription:
       "Post-construction cleaning tips for Kochi builders and developers — dust removal, debris handling, and handover-ready standards from One End Solution.",
@@ -615,6 +630,7 @@ One End Solution supports builders and developers across Kochi and Ernakulam wit
   {
     slug: "sofa-carpet-cleaning-stains-allergens",
     title: "Sofa & Carpet Cleaning: Removing Stains, Odors and Allergens at Home",
+    metaTitle: "Sofa & Carpet Cleaning: Stains, Allergens",
     category: "Residential",
     metaDescription:
       "Professional tips for removing stains, odors, and allergens from sofas and carpets at home, adapted for Kochi's humid climate and dust levels.",
@@ -654,6 +670,7 @@ Getting a sofa or carpet genuinely clean, not just surface-fresh, usually needs 
   {
     slug: "eco-friendly-cleaning-products-effectiveness",
     title: "Eco-Friendly Cleaning Products: Are They Really as Effective?",
+    metaTitle: "Do Eco-Friendly Cleaning Products Work",
     category: "General",
     metaDescription:
       "Do eco-friendly cleaning products really work as well as chemical ones? See how green cleaning performs on grease, germs, and odours in Kochi homes.",
@@ -699,9 +716,10 @@ At One End Solution, our cleaning teams combine certified eco-friendly products 
   {
     slug: "office-cleaning-schedule-daily-weekly-monthly",
     title: "Daily vs Weekly vs Monthly Office Cleaning Schedules: Which Is Right for You?",
+    metaTitle: "Daily vs Weekly Office Cleaning Schedules",
     category: "Commercial",
     metaDescription:
-      "Compare daily, weekly, and monthly office cleaning schedules for Kochi businesses and find the right frequency for your workspace.",
+      "Compare daily, weekly, and monthly office cleaning schedules for Kochi businesses and find the right frequency for your workspace and industry.",
     excerpt:
       "Choosing the right cleaning frequency depends on your office size, footfall, and industry. Here's a practical breakdown to help you decide.",
     publishedDate: "2026-03-20",
@@ -746,6 +764,7 @@ Every office is different, and getting the frequency right takes some trial and 
   {
     slug: "how-often-deep-clean-home-kerala-climate",
     title: "How Often Should You Deep Clean Your Home in Kerala's Humid Climate?",
+    metaTitle: "How Often to Deep Clean in Kerala Homes",
     category: "Residential",
     metaDescription:
       "Learn the ideal deep cleaning frequency for homes in Kerala's humid climate, with room-specific schedules tailored to Kochi's monsoon conditions.",
@@ -787,6 +806,7 @@ Keeping pace with Kerala's climate is genuinely demanding, even for households t
   {
     slug: "auditorium-event-venue-cleaning-kochi",
     title: "Auditorium & Event Venue Cleaning: A Complete Guide for Kochi Venues",
+    metaTitle: "Auditorium & Event Venue Cleaning Kochi",
     category: "Commercial",
     metaDescription:
       "A complete guide to auditorium and event venue cleaning in Kochi — pre-event prep, post-event turnaround, and monsoon-ready maintenance tips.",
@@ -833,9 +853,10 @@ Whether it's a wedding hall in Vytilla, a corporate auditorium in Kakkanad, or a
   {
     slug: "monsoon-cleaning-tips-kerala",
     title: "Monsoon-Proofing Your Home: Cleaning Tips for Kerala's Rainy Season",
+    metaTitle: "Monsoon Cleaning Tips for Kerala Homes",
     category: "Residential",
     metaDescription:
-      "Practical monsoon cleaning tips for Kerala homes covering damp control, mold prevention, and pre-monsoon prep for Kochi's rainy season.",
+      "Practical monsoon cleaning tips for Kerala homes covering damp control, mold prevention, and pre-monsoon prep for Kochi's rainy season each year.",
     excerpt:
       "Simple, proven steps to protect your Kochi home from dampness, mold, and monsoon mess before and during Kerala's rainy season.",
     publishedDate: "2026-02-27",

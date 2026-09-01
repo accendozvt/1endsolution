@@ -4,12 +4,14 @@ import BlogGrid from "@/components/BlogGrid";
 import { BLOG_POSTS } from "@/lib/blog-posts";
 import { SITE_URL } from "@/lib/site";
 
-const PAGE_URL = `${SITE_URL}/blog/`;
+const PAGE_URL = `${SITE_URL}/blog`;
+const PAGE_TITLE = "Cleaning Tips & Guides for Kochi | One End Solution";
+const PAGE_DESCRIPTION =
+  "Expert cleaning tips, checklists, and guides for homes and offices in Kochi and Ernakulam — covering deep cleaning, monsoon prep, pest control, and more.";
 
 export const metadata: Metadata = {
-  title: "Cleaning Tips & Guides for Kochi Homes & Businesses - One End Solution",
-  description:
-    "Expert cleaning tips, checklists, and guides for homes and offices in Kochi and Ernakulam — covering deep cleaning, monsoon prep, pest control, and more.",
+  title: PAGE_TITLE,
+  description: PAGE_DESCRIPTION,
   alternates: { canonical: PAGE_URL },
   robots: {
     index: true,
@@ -19,9 +21,8 @@ export const metadata: Metadata = {
     "max-image-preview": "large",
   },
   openGraph: {
-    title: "Cleaning Tips & Guides for Kochi Homes & Businesses - One End Solution",
-    description:
-      "Expert cleaning tips, checklists, and guides for homes and offices in Kochi and Ernakulam.",
+    title: PAGE_TITLE,
+    description: PAGE_DESCRIPTION,
     url: PAGE_URL,
   },
 };
@@ -37,7 +38,7 @@ const blogSchema = {
   blogPost: BLOG_POSTS.map((post) => ({
     "@type": "BlogPosting",
     headline: post.title,
-    url: `${SITE_URL}/blog/${post.slug}/`,
+    url: `${SITE_URL}/blog/${post.slug}`,
     datePublished: post.publishedDate,
   })),
 };
