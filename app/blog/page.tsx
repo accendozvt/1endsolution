@@ -2,30 +2,16 @@ import type { Metadata } from "next";
 import { SectionLabel } from "@/components/ui";
 import BlogGrid from "@/components/BlogGrid";
 import { BLOG_POSTS } from "@/lib/blog-posts";
-import { SITE_URL } from "@/lib/site";
+import { buildMetadata, absoluteUrl } from "@/lib/seo";
 
-const PAGE_URL = `${SITE_URL}/blog`;
-const PAGE_TITLE = "Cleaning Tips & Guides for Kochi | One End Solution";
-const PAGE_DESCRIPTION =
-  "Expert cleaning tips, checklists, and guides for homes and offices in Kochi and Ernakulam — covering deep cleaning, monsoon prep, pest control, and more.";
+const PAGE_URL = absoluteUrl("/blog");
 
-export const metadata: Metadata = {
-  title: PAGE_TITLE,
-  description: PAGE_DESCRIPTION,
-  alternates: { canonical: PAGE_URL },
-  robots: {
-    index: true,
-    follow: true,
-    "max-snippet": -1,
-    "max-video-preview": -1,
-    "max-image-preview": "large",
-  },
-  openGraph: {
-    title: PAGE_TITLE,
-    description: PAGE_DESCRIPTION,
-    url: PAGE_URL,
-  },
-};
+export const metadata: Metadata = buildMetadata({
+  title: "Cleaning Tips & Guides for Kochi | One End Solution",
+  description:
+    "Expert cleaning tips, checklists, and guides for homes and offices in Kochi and Ernakulam — covering deep cleaning, monsoon prep, pest control, and more.",
+  path: "/blog",
+});
 
 const blogSchema = {
   "@context": "https://schema.org",
@@ -38,7 +24,7 @@ const blogSchema = {
   blogPost: BLOG_POSTS.map((post) => ({
     "@type": "BlogPosting",
     headline: post.title,
-    url: `${SITE_URL}/blog/${post.slug}`,
+    url: absoluteUrl(`/blog/${post.slug}`),
     datePublished: post.publishedDate,
   })),
 };

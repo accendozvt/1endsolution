@@ -5,7 +5,8 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
-import { SITE_URL, PHONE_DISPLAY, EMAIL, GA_ID, SOCIALS, OG_LOCALE } from "@/lib/site";
+import { SITE_URL, PHONE_DISPLAY, EMAIL, GA_ID, SOCIALS } from "@/lib/site";
+import { buildMetadata } from "@/lib/seo";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -19,26 +20,16 @@ const jakarta = Plus_Jakarta_Sans({
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: "Best Deep Cleaning Service in Kochi - One End Solution",
-  description:
-    "Discover the best deep cleaning service in Kochi, specializing in both commercial and residential cleaning, offer cleaning, maintenance & sanitization services.",
   icons: {
     icon: "/images/cropped-one-end-logo-1-Small-Copy-Copy.png",
     apple: "/images/cropped-one-end-logo-1-Small-Copy-Copy.png",
   },
-  robots: {
-    index: true,
-    follow: true,
-    "max-image-preview": "large",
-  },
-  openGraph: {
-    locale: OG_LOCALE,
-    type: "website",
-    siteName: "One End Solution",
-  },
-  twitter: {
-    card: "summary_large_image",
-  },
+  ...buildMetadata({
+    title: "One End Solution — Best Deep Cleaning Service in Kochi",
+    description:
+      "Discover the best deep cleaning service in Kochi, specializing in both commercial and residential cleaning, offer cleaning, maintenance & sanitization services.",
+    path: "/",
+  }),
 };
 
 export const viewport: Viewport = {

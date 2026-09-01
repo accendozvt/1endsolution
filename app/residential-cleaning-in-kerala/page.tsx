@@ -4,31 +4,15 @@ import Carousel from "@/components/Carousel";
 import { CtaBand, CheckItem, SectionLabel } from "@/components/ui";
 import FaqSection from "@/components/FaqSection";
 import { RESIDENTIAL_FAQS, faqPageSchema } from "@/lib/faqs";
-import { SITE_URL, PHONE_WA_BOOKING, waLink } from "@/lib/site";
+import { buildMetadata } from "@/lib/seo";
+import { PHONE_WA_BOOKING, waLink } from "@/lib/site";
 
-const PAGE_URL = `${SITE_URL}/residential-cleaning-in-kerala`;
-const PAGE_TITLE = "Residential Cleaning in Kerala | One End Solution";
-const PAGE_DESCRIPTION =
-  "Contact us to book the best residential cleaning in Kerala. Our deep cleaning experts use eco-friendly methods to keep your home spotless and comfortable.";
-
-export const metadata: Metadata = {
-  title: PAGE_TITLE,
-  description: PAGE_DESCRIPTION,
-  alternates: { canonical: PAGE_URL },
-  robots: {
-    index: true,
-    follow: true,
-    "max-snippet": -1,
-    "max-video-preview": -1,
-    "max-image-preview": "large",
-  },
-  openGraph: {
-    title: PAGE_TITLE,
-    description: PAGE_DESCRIPTION,
-    url: PAGE_URL,
-    images: [{ url: `${SITE_URL}/images/IMG-20220309-WA0084.jpg` }],
-  },
-};
+export const metadata: Metadata = buildMetadata({
+  title: "Residential Cleaning in Kerala | One End Solution",
+  description:
+    "Contact us to book the best residential cleaning in Kerala. Our deep cleaning experts use eco-friendly methods to keep your home spotless and comfortable.",
+  path: "/residential-cleaning-in-kerala",
+});
 
 function TrustedIcon({ className }: { className?: string }) {
   return (

@@ -2,31 +2,15 @@ import type { Metadata } from "next";
 import ContactForm from "@/components/ContactForm";
 import { SectionLabel } from "@/components/ui";
 import { MailIcon, PhoneIcon } from "@/components/Header";
-import { SITE_URL, ADDRESS, EMAIL, PHONE_DISPLAY, PHONE_TEL } from "@/lib/site";
+import { buildMetadata } from "@/lib/seo";
+import { ADDRESS, EMAIL, PHONE_DISPLAY, PHONE_TEL } from "@/lib/site";
 
-const PAGE_URL = `${SITE_URL}/contact`;
-const PAGE_TITLE = "Contact Us in Kochi & Ernakulam | One End Solution";
-const PAGE_DESCRIPTION =
-  "Contact One End Solution, Panakkapadath Building, Vytilla, Ernakulam. Call +91 70343 79 777 or WhatsApp to book cleaning, housekeeping and maintenance.";
-
-export const metadata: Metadata = {
-  title: PAGE_TITLE,
-  description: PAGE_DESCRIPTION,
-  alternates: { canonical: PAGE_URL },
-  robots: {
-    index: true,
-    follow: true,
-    "max-snippet": -1,
-    "max-video-preview": -1,
-    "max-image-preview": "large",
-  },
-  openGraph: {
-    title: PAGE_TITLE,
-    description: PAGE_DESCRIPTION,
-    url: PAGE_URL,
-    images: [{ url: `${SITE_URL}/images/one-end-logo-1-Copy-2.png` }],
-  },
-};
+export const metadata: Metadata = buildMetadata({
+  title: "Contact Us in Kochi & Ernakulam | One End Solution",
+  description:
+    "Contact One End Solution, Panakkapadath Building, Vytilla, Ernakulam. Call +91 70343 79 777 or WhatsApp to book cleaning, housekeeping and maintenance.",
+  path: "/contact",
+});
 
 const PERKS = ["Saves Your Time", "Cashlese Payment", "Seamless Communication"];
 

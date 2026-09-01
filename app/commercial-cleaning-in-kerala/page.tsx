@@ -4,31 +4,15 @@ import Carousel from "@/components/Carousel";
 import { CtaBand, CheckItem, SectionLabel } from "@/components/ui";
 import FaqSection from "@/components/FaqSection";
 import { COMMERCIAL_FAQS, faqPageSchema } from "@/lib/faqs";
-import { SITE_URL, PHONE_WA_PRIMARY, waLink } from "@/lib/site";
+import { buildMetadata } from "@/lib/seo";
+import { PHONE_WA_PRIMARY, waLink } from "@/lib/site";
 
-const PAGE_URL = `${SITE_URL}/commercial-cleaning-in-kerala`;
-const PAGE_TITLE = "Commercial Cleaning in Kerala | One End Solution";
-const PAGE_DESCRIPTION =
-  "One End Solution offers top-tier commercial cleaning in Kerala, specializing in office cleaning, shop and showroom cleaning, and more in Ernakulam.";
-
-export const metadata: Metadata = {
-  title: PAGE_TITLE,
-  description: PAGE_DESCRIPTION,
-  alternates: { canonical: PAGE_URL },
-  robots: {
-    index: true,
-    follow: true,
-    "max-snippet": -1,
-    "max-video-preview": -1,
-    "max-image-preview": "large",
-  },
-  openGraph: {
-    title: PAGE_TITLE,
-    description: PAGE_DESCRIPTION,
-    url: PAGE_URL,
-    images: [{ url: `${SITE_URL}/images/IMG-20220309-WA0090.jpg` }],
-  },
-};
+export const metadata: Metadata = buildMetadata({
+  title: "Commercial Cleaning in Kerala | One End Solution",
+  description:
+    "One End Solution offers top-tier commercial cleaning in Kerala, specializing in office cleaning, shop and showroom cleaning, and more in Ernakulam.",
+  path: "/commercial-cleaning-in-kerala",
+});
 
 const GALLERY = [
   { src: "/images/IMG-20220626-WA0027.jpg", width: 1599, height: 720 },

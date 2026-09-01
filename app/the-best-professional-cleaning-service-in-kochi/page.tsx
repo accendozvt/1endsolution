@@ -3,31 +3,15 @@ import Image from "next/image";
 import Link from "next/link";
 import { PromiseCard, CheckItem, SectionLabel } from "@/components/ui";
 import { WhatsAppIcon } from "@/components/Header";
-import { SITE_URL, PHONE_WA_BOOKING, waLink } from "@/lib/site";
+import { buildMetadata } from "@/lib/seo";
+import { PHONE_WA_BOOKING, waLink } from "@/lib/site";
 
-const PAGE_URL = `${SITE_URL}/the-best-professional-cleaning-service-in-kochi`;
-const PAGE_TITLE = "Professional Cleaning Service in Kochi | One End Solution";
-const PAGE_DESCRIPTION =
-  "Looking for a professional cleaning service in Kochi? One End Solution offers 20+ years of experience, trained staff, and eco-friendly cleaning methods.";
-
-export const metadata: Metadata = {
-  title: PAGE_TITLE,
-  description: PAGE_DESCRIPTION,
-  alternates: { canonical: PAGE_URL },
-  robots: {
-    index: true,
-    follow: true,
-    "max-snippet": -1,
-    "max-video-preview": -1,
-    "max-image-preview": "large",
-  },
-  openGraph: {
-    title: PAGE_TITLE,
-    description: PAGE_DESCRIPTION,
-    url: PAGE_URL,
-    images: [{ url: `${SITE_URL}/images/IMG-20220526-WA0086.jpg` }],
-  },
-};
+export const metadata: Metadata = buildMetadata({
+  title: "Professional Cleaning Service in Kochi | One End Solution",
+  description:
+    "Looking for a professional cleaning service in Kochi? One End Solution offers 20+ years of experience, trained staff, and eco-friendly cleaning methods.",
+  path: "/the-best-professional-cleaning-service-in-kochi",
+});
 
 export default function AboutPage() {
   return (

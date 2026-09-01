@@ -5,6 +5,7 @@ import MarkdownBody from "@/components/MarkdownBody";
 import { SectionLabel } from "@/components/ui";
 import { WhatsAppIcon } from "@/components/Header";
 import { BLOG_POSTS, readTimeMinutes } from "@/lib/blog-posts";
+import { buildMetadata, absoluteUrl } from "@/lib/seo";
 import { SITE_URL, PHONE_WA_PRIMARY, waLink } from "@/lib/site";
 
 type Params = { slug: string };
@@ -30,27 +31,14 @@ export async function generateMetadata({
   const post = BLOG_POSTS.find((p) => p.slug === slug);
   if (!post) return {};
 
-  const url = `${SITE_URL}/blog/${post.slug}`;
   const title = `${post.metaTitle} | One End Solution`;
-  return {
+  return buildMetadata({
     title,
     description: post.metaDescription,
-    alternates: { canonical: url },
-    robots: {
-      index: true,
-      follow: true,
-      "max-snippet": -1,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-    },
-    openGraph: {
-      type: "article",
-      title,
-      description: post.metaDescription,
-      url,
-      publishedTime: post.publishedDate,
-    },
-  };
+    path: `/blog/${post.slug}`,
+    type: "article",
+    publishedTime: post.publishedDate,
+  });
 }
 
 export default async function BlogPostPage({
@@ -62,7 +50,7 @@ export default async function BlogPostPage({
   const post = BLOG_POSTS.find((p) => p.slug === slug);
   if (!post) notFound();
 
-  const url = `${SITE_URL}/blog/${post.slug}`;
+  const url = absoluteUrl(`/blog/${post.slug}`);
   const related = BLOG_POSTS.filter(
     (p) => p.category === post.category && p.slug !== post.slug
   ).slice(0, 3);
