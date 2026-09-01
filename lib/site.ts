@@ -25,6 +25,25 @@ export const GA_ID = "G-ZE8EEC0V6P";
 export const waLink = (phone: string, text?: string) =>
   `https://wa.me/${phone}${text ? `?text=${encodeURIComponent(text)}` : ""}`;
 
+export const CORE_SERVICES = [
+  "House Keeping, Maintenance & Supporting Services",
+  "Maintenance Works on Call (Electrical, Plumbing, Carpentry Etc)",
+  "House and Flat Deep Cleaning (Floor to Ceiling)",
+  "Show Room and Office Pre Inauguration Cleaning",
+  "Disinfection, Sanitizing and Fumigation",
+  "Carpet & Sofa Shampoo Cleaning in Kerala",
+  "Glass Cleaning Service in Kochi",
+  "Pest Control Service in Kochi",
+  "Signage Board Cleaning, Repairing & Making",
+  "A/C Repairing",
+  "Painting Works in Kerala",
+  "Water Tank Cleaning",
+  "Blinds and Curtains Cleaning in Kerala",
+  "Water Proofing in Kerala",
+  "Grass Cutting Service in Kochi",
+  "Caretaker Service in Kochi",
+];
+
 export const NAV = [
   { label: "Home", href: "/" },
   { label: "About", href: "/the-best-professional-cleaning-service-in-kochi" },

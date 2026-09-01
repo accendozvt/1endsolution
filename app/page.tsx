@@ -11,6 +11,7 @@ import {
   PHONE_WA_PRIMARY,
   PHONE_WA_BOOKING,
   SOCIALS,
+  CORE_SERVICES,
   waLink,
 } from "@/lib/site";
 
@@ -20,25 +21,6 @@ export const metadata: Metadata = buildMetadata({
     "Discover the best deep cleaning service in Kochi, specializing in both commercial and residential cleaning, offer cleaning, maintenance & sanitization services.",
   path: "/",
 });
-
-const CORE_SERVICES = [
-  "House Keeping, Maintenance & Supporting Services",
-  "Maintenance Works on Call (Electrical, Plumbing, Carpentry Etc)",
-  "House and Flat Deep Cleaning (Floor to Ceiling)",
-  "Show Room and Office Pre Inauguration Cleaning",
-  "Disinfection, Sanitizing and Fumigation",
-  "Carpet & Sofa Shampoo Cleaning in Kerala",
-  "Glass Cleaning Service in Kochi",
-  "Pest Control Service in Kochi",
-  "Signage Board Cleaning, Repairing & Making",
-  "A/C Repairing",
-  "Painting Works in Kerala",
-  "Water Tank Cleaning",
-  "Blinds and Curtains Cleaning in Kerala",
-  "Water Proofing in Kerala",
-  "Grass Cutting Service in Kochi",
-  "Caretaker Service in Kochi",
-];
 
 const GALLERY = [
   "IMG-20220626-WA0027",
