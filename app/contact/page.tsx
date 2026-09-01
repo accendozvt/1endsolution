@@ -2,15 +2,25 @@ import type { Metadata } from "next";
 import ContactForm from "@/components/ContactForm";
 import { SectionLabel } from "@/components/ui";
 import { MailIcon, PhoneIcon } from "@/components/Header";
-import { buildMetadata } from "@/lib/seo";
+import { buildMetadata, webPageSchema, breadcrumbSchema } from "@/lib/seo";
 import { ADDRESS, EMAIL, PHONE_DISPLAY, PHONE_TEL } from "@/lib/site";
 
+const PAGE_PATH = "/contact";
+const PAGE_TITLE = "Contact Us in Kochi & Ernakulam | One End Solution";
+const PAGE_DESCRIPTION =
+  "Contact One End Solution, Panakkapadath Building, Vytilla, Ernakulam. Call +91 70343 79 777 or WhatsApp to book cleaning, housekeeping and maintenance.";
+
 export const metadata: Metadata = buildMetadata({
-  title: "Contact Us in Kochi & Ernakulam | One End Solution",
-  description:
-    "Contact One End Solution, Panakkapadath Building, Vytilla, Ernakulam. Call +91 70343 79 777 or WhatsApp to book cleaning, housekeeping and maintenance.",
-  path: "/contact",
+  title: PAGE_TITLE,
+  description: PAGE_DESCRIPTION,
+  path: PAGE_PATH,
 });
+
+const webPageJsonLd = webPageSchema({ name: PAGE_TITLE, description: PAGE_DESCRIPTION, path: PAGE_PATH });
+const breadcrumbJsonLd = breadcrumbSchema([
+  { name: "Home", path: "/" },
+  { name: "Contact", path: PAGE_PATH },
+]);
 
 const PERKS = ["Saves Your Time", "Cashlese Payment", "Seamless Communication"];
 
@@ -113,6 +123,15 @@ export default function ContactPage() {
           ))}
         </div>
       </section>
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
     </>
   );
 }

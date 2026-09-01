@@ -3,15 +3,25 @@ import Image from "next/image";
 import Link from "next/link";
 import { PromiseCard, CheckItem, SectionLabel } from "@/components/ui";
 import { WhatsAppIcon } from "@/components/Header";
-import { buildMetadata } from "@/lib/seo";
+import { buildMetadata, webPageSchema, breadcrumbSchema } from "@/lib/seo";
 import { PHONE_WA_BOOKING, waLink } from "@/lib/site";
 
+const PAGE_PATH = "/the-best-professional-cleaning-service-in-kochi";
+const PAGE_TITLE = "Professional Cleaning Service in Kochi | One End Solution";
+const PAGE_DESCRIPTION =
+  "Looking for a professional cleaning service in Kochi? One End Solution offers 20+ years of experience, trained staff, and eco-friendly cleaning methods.";
+
 export const metadata: Metadata = buildMetadata({
-  title: "Professional Cleaning Service in Kochi | One End Solution",
-  description:
-    "Looking for a professional cleaning service in Kochi? One End Solution offers 20+ years of experience, trained staff, and eco-friendly cleaning methods.",
-  path: "/the-best-professional-cleaning-service-in-kochi",
+  title: PAGE_TITLE,
+  description: PAGE_DESCRIPTION,
+  path: PAGE_PATH,
 });
+
+const webPageJsonLd = webPageSchema({ name: PAGE_TITLE, description: PAGE_DESCRIPTION, path: PAGE_PATH });
+const breadcrumbJsonLd = breadcrumbSchema([
+  { name: "Home", path: "/" },
+  { name: "About", path: PAGE_PATH },
+]);
 
 export default function AboutPage() {
   return (
@@ -292,6 +302,15 @@ export default function AboutPage() {
           </a>
         </div>
       </section>
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
     </>
   );
 }

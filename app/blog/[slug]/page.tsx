@@ -5,7 +5,13 @@ import MarkdownBody from "@/components/MarkdownBody";
 import { SectionLabel } from "@/components/ui";
 import { WhatsAppIcon } from "@/components/Header";
 import { BLOG_POSTS, readTimeMinutes } from "@/lib/blog-posts";
-import { buildMetadata, absoluteUrl } from "@/lib/seo";
+import {
+  buildMetadata,
+  absoluteUrl,
+  webPageSchema,
+  breadcrumbSchema,
+  OG_IMAGE_WEBP,
+} from "@/lib/seo";
 import { SITE_URL, PHONE_WA_PRIMARY, waLink } from "@/lib/site";
 
 type Params = { slug: string };
@@ -60,6 +66,7 @@ export default async function BlogPostPage({
     "@type": "BlogPosting",
     headline: post.title,
     description: post.metaDescription,
+    image: OG_IMAGE_WEBP,
     url,
     datePublished: post.publishedDate,
     dateModified: post.publishedDate,
@@ -76,18 +83,20 @@ export default async function BlogPostPage({
         url: `${SITE_URL}/images/one-end-logo-1-Small-Copy-Copy.png`,
       },
     },
-    mainEntityOfPage: { "@type": "WebPage", "@id": url },
+    mainEntityOfPage: { "@type": "WebPage", "@id": `${url}#webpage` },
   };
 
-  const breadcrumbSchema = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home", item: `${SITE_URL}/` },
-      { "@type": "ListItem", position: 2, name: "Blog", item: `${SITE_URL}/blog` },
-      { "@type": "ListItem", position: 3, name: post.title, item: url },
-    ],
-  };
+  const webPageJsonLd = webPageSchema({
+    name: `${post.metaTitle} | One End Solution`,
+    description: post.metaDescription,
+    path: `/blog/${post.slug}`,
+  });
+
+  const breadcrumbJsonLd = breadcrumbSchema([
+    { name: "Home", path: "/" },
+    { name: "Blog", path: "/blog" },
+    { name: post.title, path: `/blog/${post.slug}` },
+  ]);
 
   return (
     <>
@@ -165,7 +174,11 @@ export default async function BlogPostPage({
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
     </>
   );

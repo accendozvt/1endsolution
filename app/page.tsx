@@ -5,7 +5,7 @@ import { CtaBand, PromiseCard, CheckItem, SectionLabel } from "@/components/ui";
 import { WhatsAppIcon, FacebookIcon, InstagramIcon, PhoneIcon } from "@/components/Header";
 import FaqSection from "@/components/FaqSection";
 import { HOME_FAQS, faqPageSchema } from "@/lib/faqs";
-import { buildMetadata } from "@/lib/seo";
+import { buildMetadata, webPageSchema } from "@/lib/seo";
 import {
   PHONE_DISPLAY,
   PHONE_WA_PRIMARY,
@@ -15,10 +15,19 @@ import {
   waLink,
 } from "@/lib/site";
 
+const PAGE_TITLE = "One End Solution — Best Deep Cleaning Service in Kochi";
+const PAGE_DESCRIPTION =
+  "Discover the best deep cleaning service in Kochi, specializing in both commercial and residential cleaning, offer cleaning, maintenance & sanitization services.";
+
 export const metadata: Metadata = buildMetadata({
-  title: "One End Solution — Best Deep Cleaning Service in Kochi",
-  description:
-    "Discover the best deep cleaning service in Kochi, specializing in both commercial and residential cleaning, offer cleaning, maintenance & sanitization services.",
+  title: PAGE_TITLE,
+  description: PAGE_DESCRIPTION,
+  path: "/",
+});
+
+const webPageJsonLd = webPageSchema({
+  name: PAGE_TITLE,
+  description: PAGE_DESCRIPTION,
   path: "/",
 });
 
@@ -503,6 +512,10 @@ export default function HomePage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqPageSchema(HOME_FAQS)) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageJsonLd) }}
       />
     </>
   );

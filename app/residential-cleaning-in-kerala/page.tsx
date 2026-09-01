@@ -4,14 +4,30 @@ import Carousel from "@/components/Carousel";
 import { CtaBand, CheckItem, SectionLabel } from "@/components/ui";
 import FaqSection from "@/components/FaqSection";
 import { RESIDENTIAL_FAQS, faqPageSchema } from "@/lib/faqs";
-import { buildMetadata } from "@/lib/seo";
+import { buildMetadata, webPageSchema, breadcrumbSchema, serviceSchema } from "@/lib/seo";
 import { PHONE_WA_BOOKING, waLink } from "@/lib/site";
 
+const PAGE_PATH = "/residential-cleaning-in-kerala";
+const PAGE_TITLE = "Residential Cleaning in Kerala | One End Solution";
+const PAGE_DESCRIPTION =
+  "Contact us to book the best residential cleaning in Kerala. Our deep cleaning experts use eco-friendly methods to keep your home spotless and comfortable.";
+
 export const metadata: Metadata = buildMetadata({
-  title: "Residential Cleaning in Kerala | One End Solution",
-  description:
-    "Contact us to book the best residential cleaning in Kerala. Our deep cleaning experts use eco-friendly methods to keep your home spotless and comfortable.",
-  path: "/residential-cleaning-in-kerala",
+  title: PAGE_TITLE,
+  description: PAGE_DESCRIPTION,
+  path: PAGE_PATH,
+});
+
+const webPageJsonLd = webPageSchema({ name: PAGE_TITLE, description: PAGE_DESCRIPTION, path: PAGE_PATH });
+const breadcrumbJsonLd = breadcrumbSchema([
+  { name: "Home", path: "/" },
+  { name: "Residential Cleaning", path: PAGE_PATH },
+]);
+const serviceJsonLd = serviceSchema({
+  name: "Residential Cleaning",
+  description: PAGE_DESCRIPTION,
+  path: PAGE_PATH,
+  areaServed: ["Kochi", "Ernakulam", "Kerala"],
 });
 
 function TrustedIcon({ className }: { className?: string }) {
@@ -310,6 +326,18 @@ export default function ResidentialPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqPageSchema(RESIDENTIAL_FAQS)) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
       />
     </>
   );

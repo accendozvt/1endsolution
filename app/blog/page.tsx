@@ -2,16 +2,25 @@ import type { Metadata } from "next";
 import { SectionLabel } from "@/components/ui";
 import BlogGrid from "@/components/BlogGrid";
 import { BLOG_POSTS } from "@/lib/blog-posts";
-import { buildMetadata, absoluteUrl } from "@/lib/seo";
+import { buildMetadata, absoluteUrl, webPageSchema, breadcrumbSchema } from "@/lib/seo";
 
-const PAGE_URL = absoluteUrl("/blog");
+const PAGE_PATH = "/blog";
+const PAGE_URL = absoluteUrl(PAGE_PATH);
+const PAGE_TITLE = "Cleaning Tips & Guides for Kochi | One End Solution";
+const PAGE_DESCRIPTION =
+  "Expert cleaning tips, checklists, and guides for homes and offices in Kochi and Ernakulam — covering deep cleaning, monsoon prep, pest control, and more.";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Cleaning Tips & Guides for Kochi | One End Solution",
-  description:
-    "Expert cleaning tips, checklists, and guides for homes and offices in Kochi and Ernakulam — covering deep cleaning, monsoon prep, pest control, and more.",
-  path: "/blog",
+  title: PAGE_TITLE,
+  description: PAGE_DESCRIPTION,
+  path: PAGE_PATH,
 });
+
+const webPageJsonLd = webPageSchema({ name: PAGE_TITLE, description: PAGE_DESCRIPTION, path: PAGE_PATH });
+const breadcrumbJsonLd = breadcrumbSchema([
+  { name: "Home", path: "/" },
+  { name: "Blog", path: PAGE_PATH },
+]);
 
 const blogSchema = {
   "@context": "https://schema.org",
@@ -53,6 +62,14 @@ export default function BlogPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(blogSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
     </>
   );

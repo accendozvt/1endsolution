@@ -4,14 +4,30 @@ import Carousel from "@/components/Carousel";
 import { CtaBand, CheckItem, SectionLabel } from "@/components/ui";
 import FaqSection from "@/components/FaqSection";
 import { COMMERCIAL_FAQS, faqPageSchema } from "@/lib/faqs";
-import { buildMetadata } from "@/lib/seo";
+import { buildMetadata, webPageSchema, breadcrumbSchema, serviceSchema } from "@/lib/seo";
 import { PHONE_WA_PRIMARY, waLink } from "@/lib/site";
 
+const PAGE_PATH = "/commercial-cleaning-in-kerala";
+const PAGE_TITLE = "Commercial Cleaning in Kerala | One End Solution";
+const PAGE_DESCRIPTION =
+  "One End Solution offers top-tier commercial cleaning in Kerala, specializing in office cleaning, shop and showroom cleaning, and more in Ernakulam.";
+
 export const metadata: Metadata = buildMetadata({
-  title: "Commercial Cleaning in Kerala | One End Solution",
-  description:
-    "One End Solution offers top-tier commercial cleaning in Kerala, specializing in office cleaning, shop and showroom cleaning, and more in Ernakulam.",
-  path: "/commercial-cleaning-in-kerala",
+  title: PAGE_TITLE,
+  description: PAGE_DESCRIPTION,
+  path: PAGE_PATH,
+});
+
+const webPageJsonLd = webPageSchema({ name: PAGE_TITLE, description: PAGE_DESCRIPTION, path: PAGE_PATH });
+const breadcrumbJsonLd = breadcrumbSchema([
+  { name: "Home", path: "/" },
+  { name: "Commercial Cleaning", path: PAGE_PATH },
+]);
+const serviceJsonLd = serviceSchema({
+  name: "Commercial Cleaning",
+  description: PAGE_DESCRIPTION,
+  path: PAGE_PATH,
+  areaServed: ["Kochi", "Ernakulam", "Kerala"],
 });
 
 const GALLERY = [
@@ -342,6 +358,18 @@ export default function CommercialPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqPageSchema(COMMERCIAL_FAQS)) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
       />
     </>
   );

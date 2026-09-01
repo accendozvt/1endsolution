@@ -5,8 +5,8 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
-import { SITE_URL, PHONE_DISPLAY, EMAIL, GA_ID, SOCIALS } from "@/lib/site";
-import { buildMetadata } from "@/lib/seo";
+import { SITE_URL, PHONE_DISPLAY, PHONE_TEL, EMAIL, GA_ID, SOCIALS } from "@/lib/site";
+import { buildMetadata, websiteSchema, ORGANIZATION_ID } from "@/lib/seo";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -41,8 +41,11 @@ export const viewport: Viewport = {
 const organizationSchema = {
   "@context": "https://schema.org",
   "@type": ["GeneralContractor", "LocalBusiness"],
-  "@id": `${SITE_URL}/#organization`,
+  "@id": ORGANIZATION_ID,
   name: "One End Solution",
+  legalName: "1 End Solution Pvt Ltd",
+  description:
+    "Discover the best deep cleaning service in Kochi, specializing in both commercial and residential cleaning, offer cleaning, maintenance & sanitization services.",
   url: SITE_URL,
   logo: `${SITE_URL}/images/one-end-logo-1-Small-Copy-Copy.png`,
   image: `${SITE_URL}/images/one-end-logo-1-Small-Copy-Copy.png`,
@@ -74,6 +77,14 @@ const organizationSchema = {
   },
   areaServed: ["Kochi", "Ernakulam", "Kerala"],
   sameAs: [SOCIALS.facebook, SOCIALS.instagram],
+  contactPoint: {
+    "@type": "ContactPoint",
+    contactType: "customer service",
+    telephone: PHONE_TEL,
+    email: EMAIL,
+    areaServed: "IN",
+    availableLanguage: ["en"],
+  },
 };
 
 export default function RootLayout({
@@ -91,6 +102,10 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
         />
         <Script
           src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
