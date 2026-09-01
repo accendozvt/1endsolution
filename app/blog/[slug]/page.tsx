@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import MarkdownBody from "@/components/MarkdownBody";
 import { SectionLabel } from "@/components/ui";
@@ -10,7 +11,6 @@ import {
   absoluteUrl,
   webPageSchema,
   breadcrumbSchema,
-  OG_IMAGE_WEBP,
 } from "@/lib/seo";
 import { SITE_URL, PHONE_WA_PRIMARY, waLink } from "@/lib/site";
 
@@ -44,6 +44,7 @@ export async function generateMetadata({
     path: `/blog/${post.slug}`,
     type: "article",
     publishedTime: post.publishedDate,
+    image: { url: absoluteUrl(post.image), alt: post.imageAlt, width: 1376, height: 768 },
   });
 }
 
@@ -66,7 +67,7 @@ export default async function BlogPostPage({
     "@type": "BlogPosting",
     headline: post.title,
     description: post.metaDescription,
-    image: OG_IMAGE_WEBP,
+    image: absoluteUrl(post.image),
     url,
     datePublished: post.publishedDate,
     dateModified: post.publishedDate,
@@ -122,6 +123,19 @@ export default async function BlogPostPage({
           </div>
         </div>
       </section>
+
+      <div className="mx-auto max-w-4xl px-4">
+        <div className="relative -mt-10 aspect-[16/9] w-full overflow-hidden rounded-2xl shadow-lg sm:-mt-14">
+          <Image
+            src={post.image}
+            alt={post.imageAlt}
+            fill
+            priority
+            sizes="(max-width: 896px) 100vw, 896px"
+            className="object-cover"
+          />
+        </div>
+      </div>
 
       <article className="mx-auto max-w-3xl px-4 py-16">
         <MarkdownBody body={post.body} />

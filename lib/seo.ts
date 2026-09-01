@@ -18,6 +18,7 @@ type BuildMetadataInput = {
   path: string;
   type?: "website" | "article";
   publishedTime?: string;
+  image?: { url: string; alt: string; width: number; height: number };
 };
 
 /**
@@ -32,8 +33,15 @@ export function buildMetadata({
   path,
   type = "website",
   publishedTime,
+  image,
 }: BuildMetadataInput): Metadata {
   const url = absoluteUrl(path);
+  const ogImages = image
+    ? [{ url: image.url, width: image.width, height: image.height, alt: image.alt }]
+    : [
+        { url: OG_IMAGE_WEBP, width: 1200, height: 630, alt: OG_IMAGE_ALT, type: "image/webp" },
+        { url: OG_IMAGE_PNG, width: 1200, height: 630, alt: OG_IMAGE_ALT, type: "image/png" },
+      ];
 
   const openGraph = {
     type,
@@ -42,10 +50,7 @@ export function buildMetadata({
     url,
     title,
     description,
-    images: [
-      { url: OG_IMAGE_WEBP, width: 1200, height: 630, alt: OG_IMAGE_ALT, type: "image/webp" },
-      { url: OG_IMAGE_PNG, width: 1200, height: 630, alt: OG_IMAGE_ALT, type: "image/png" },
-    ],
+    images: ogImages,
     ...(type === "article" && publishedTime ? { publishedTime } : {}),
   } as Metadata["openGraph"];
 
@@ -65,7 +70,7 @@ export function buildMetadata({
       card: "summary_large_image",
       title,
       description,
-      images: [{ url: OG_IMAGE_WEBP, alt: OG_IMAGE_ALT }],
+      images: [image ? { url: image.url, alt: image.alt } : { url: OG_IMAGE_WEBP, alt: OG_IMAGE_ALT }],
     },
   };
 }

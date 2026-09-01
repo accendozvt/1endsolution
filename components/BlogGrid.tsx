@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import type { BlogCategory, BlogPost } from "@/lib/blog-posts";
 import { readTimeMinutes } from "@/lib/blog-posts";
 
@@ -43,18 +44,30 @@ export default function BlogGrid({ posts }: { posts: BlogPost[] }) {
           <Link
             key={post.slug}
             href={`/blog/${post.slug}`}
-            className="group flex flex-col rounded-2xl bg-white p-6 shadow-sm ring-1 ring-mist transition hover:shadow-md"
+            className="group flex flex-col overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-mist transition hover:shadow-md"
           >
-            <span className="inline-flex w-fit items-center rounded-full bg-mist px-3 py-1 text-xs font-semibold uppercase tracking-wide text-brand">
-              {post.category}
-            </span>
-            <h2 className="mt-4 text-lg font-bold leading-snug text-ink transition group-hover:text-brand">
-              {post.title}
-            </h2>
-            <p className="mt-3 flex-1 text-sm leading-6 text-body">{post.excerpt}</p>
-            <div className="mt-5 flex items-center justify-between text-xs text-body">
-              <time dateTime={post.publishedDate}>{formatDate(post.publishedDate)}</time>
-              <span>{readTimeMinutes(post.body)} min read</span>
+            <div className="relative aspect-[16/9] w-full overflow-hidden bg-mist">
+              <Image
+                src={post.image}
+                alt={post.imageAlt}
+                fill
+                quality={70}
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                className="object-cover transition duration-300 group-hover:scale-105"
+              />
+            </div>
+            <div className="flex flex-1 flex-col p-6">
+              <span className="inline-flex w-fit items-center rounded-full bg-mist px-3 py-1 text-xs font-semibold uppercase tracking-wide text-brand">
+                {post.category}
+              </span>
+              <h2 className="mt-4 text-lg font-bold leading-snug text-ink transition group-hover:text-brand">
+                {post.title}
+              </h2>
+              <p className="mt-3 flex-1 text-sm leading-6 text-body">{post.excerpt}</p>
+              <div className="mt-5 flex items-center justify-between text-xs text-body">
+                <time dateTime={post.publishedDate}>{formatDate(post.publishedDate)}</time>
+                <span>{readTimeMinutes(post.body)} min read</span>
+              </div>
             </div>
           </Link>
         ))}

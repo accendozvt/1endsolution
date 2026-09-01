@@ -49,15 +49,24 @@ function extractAllMeta(html, attr) {
       if (!ogKeys.includes(req)) problems.push(`${p}: missing ${req}`);
     }
 
+    // Most pages fall back to the site-wide OG image (webp+png, 2 entries).
+    // Blog posts override with their own single generated image (1 entry).
     const ogImages = ogTags.filter((t) => t.key === "og:image");
-    if (ogImages.length < 2) problems.push(`${p}: expected 2 og:image entries (webp+png), found ${ogImages.length}`);
+    const isBlogPost = p.startsWith("/blog/") && p !== "/blog";
+    const minImages = isBlogPost ? 1 : 2;
+    if (ogImages.length < minImages)
+      problems.push(`${p}: expected >=${minImages} og:image entries, found ${ogImages.length}`);
     ogImages.forEach((img) => imageUrlsToCheck.add(img.value));
 
     const imgWidths = ogTags.filter((t) => t.key === "og:image:width").map((t) => t.value);
     const imgHeights = ogTags.filter((t) => t.key === "og:image:height").map((t) => t.value);
     const imgAlts = ogTags.filter((t) => t.key === "og:image:alt").map((t) => t.value);
-    if (!imgWidths.every((w) => w === "1200")) problems.push(`${p}: og:image:width not all 1200: ${imgWidths}`);
-    if (!imgHeights.every((h) => h === "630")) problems.push(`${p}: og:image:height not all 630: ${imgHeights}`);
+    const expectedWidths = isBlogPost ? ["1376"] : ["1200"];
+    const expectedHeights = isBlogPost ? ["768"] : ["630"];
+    if (!imgWidths.every((w) => expectedWidths.includes(w)))
+      problems.push(`${p}: og:image:width not in ${expectedWidths}: ${imgWidths}`);
+    if (!imgHeights.every((h) => expectedHeights.includes(h)))
+      problems.push(`${p}: og:image:height not in ${expectedHeights}: ${imgHeights}`);
     if (imgAlts.some((a) => !a)) problems.push(`${p}: og:image:alt missing on one image`);
 
     const ogUrl = ogTags.find((t) => t.key === "og:url")?.value;
