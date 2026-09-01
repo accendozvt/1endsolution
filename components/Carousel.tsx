@@ -49,6 +49,7 @@ export default function Carousel({
         ))}
       </div>
       <button
+        type="button"
         onClick={() => scrollBy(-1)}
         aria-label="Previous slide"
         className="absolute left-2 top-1/2 -translate-y-1/2 flex h-10 w-10 items-center justify-center rounded-full bg-white/90 text-ink shadow-md hover:bg-brand hover:text-white transition"
@@ -58,6 +59,7 @@ export default function Carousel({
         </svg>
       </button>
       <button
+        type="button"
         onClick={() => scrollBy(1)}
         aria-label="Next slide"
         className="absolute right-2 top-1/2 -translate-y-1/2 flex h-10 w-10 items-center justify-center rounded-full bg-white/90 text-ink shadow-md hover:bg-brand hover:text-white transition"

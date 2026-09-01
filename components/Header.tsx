@@ -92,6 +92,7 @@ export default function Header() {
               Book Now
             </a>
             <button
+              type="button"
               onClick={() => setOpen(!open)}
               className="lg:hidden inline-flex h-10 w-10 items-center justify-center rounded-md text-ink"
               aria-label="Toggle menu"

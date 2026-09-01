@@ -25,6 +25,7 @@ export default function BlogGrid({ posts }: { posts: BlogPost[] }) {
         {CATEGORIES.map((cat) => (
           <button
             key={cat}
+            type="button"
             onClick={() => setActive(cat)}
             className={`rounded-full px-5 py-2 text-sm font-semibold transition ${
               active === cat

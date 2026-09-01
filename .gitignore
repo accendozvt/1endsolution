@@ -44,3 +44,6 @@ next-env.d.ts
 /seo-audit/baseline/*.json
 /seo-audit/final/*.json
 /seo-audit/*/lh-errors.log
+/seo-audit/*.log
+/seo-audit/html-snapshot/
+/seo-audit/final-scores-table.md
