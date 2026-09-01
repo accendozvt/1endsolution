@@ -116,7 +116,7 @@ export default function ResidentialPage() {
         <div className="relative mx-auto max-w-7xl px-4 py-20 lg:py-28 text-center">
           <SectionLabel>Residential Cleaning</SectionLabel>
           <h1 className="mt-3 text-4xl sm:text-5xl font-extrabold text-white">
-            We Service To Make Your Place Shine
+            Residential Cleaning in Kerala
           </h1>
           <div className="mx-auto mt-10 grid max-w-4xl grid-cols-3 gap-4">
             {FEATURES.map((f) => (
@@ -125,7 +125,7 @@ export default function ResidentialPage() {
                 className="flex flex-col items-center gap-3 rounded-2xl bg-white/10 p-6 backdrop-blur"
               >
                 <f.Icon className="h-12 w-12 text-white" />
-                <h5 className="font-semibold text-white text-center text-lg">{f.label}</h5>
+                <h2 className="font-semibold text-white text-center text-lg">{f.label}</h2>
               </div>
             ))}
           </div>
@@ -137,9 +137,9 @@ export default function ResidentialPage() {
         <div className="grid items-center gap-12 lg:grid-cols-2">
           <div>
             <SectionLabel>We Cover All Your Needs</SectionLabel>
-            <h1 className="mt-2 text-3xl sm:text-4xl font-bold leading-snug">
-              Residential Cleaning in Kerala
-            </h1>
+            <h2 className="mt-2 text-3xl sm:text-4xl font-bold leading-snug">
+              We Service To Make Your Place Shine
+            </h2>
             <p className="mt-5 leading-8">
               When it comes to residential cleaning in Kerala, One End Solution
               redefine cleanliness and comfort in your home. Our team of deep

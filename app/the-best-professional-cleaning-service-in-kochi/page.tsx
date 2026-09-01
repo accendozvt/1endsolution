@@ -60,9 +60,7 @@ export default function AboutPage() {
             </div>
           </div>
           <div className="lg:col-span-3 space-y-5 leading-8">
-            <h6 className="text-sm font-semibold uppercase tracking-widest text-brand">
-              Message from the founder
-            </h6>
+            <SectionLabel>Message from the founder</SectionLabel>
             <h2 className="text-3xl sm:text-4xl font-bold leading-snug">
               One End Solution: Your Trusted Partner in Professional Cleaning
               Services in Ernakulam
@@ -157,9 +155,9 @@ export default function AboutPage() {
       {/* CTA */}
       <section className="bg-brand">
         <div className="mx-auto max-w-7xl px-4 py-12 flex flex-col items-center gap-6 text-center sm:flex-row sm:justify-between sm:text-left">
-          <h4 className="text-2xl sm:text-3xl font-bold text-white">
+          <h2 className="text-2xl sm:text-3xl font-bold text-white">
             Schedule Cleaning Now &amp; Get Free Estimate
-          </h4>
+          </h2>
           <div className="flex flex-wrap justify-center gap-3">
             <a
               href={waLink(PHONE_WA_BOOKING)}
@@ -188,12 +186,10 @@ export default function AboutPage() {
           </h2>
           <div className="mt-12 grid gap-8 lg:grid-cols-2">
             <div className="rounded-2xl bg-white p-10 shadow-sm ring-1 ring-mist">
-              <h6 className="text-sm font-semibold uppercase tracking-widest text-brand">
-                Our Mission
-              </h6>
-              <h6 className="mt-2 text-xl font-bold text-ink">
+              <SectionLabel>Our Mission</SectionLabel>
+              <h3 className="mt-2 text-xl font-bold text-ink">
                 Deliver Unparalleled Professional Cleaning
-              </h6>
+              </h3>
               <p className="mt-4 leading-8">
                 At One End Solution, our mission is to deliver unparalleled
                 professional cleaning services that exceed expectations in both
@@ -209,12 +205,10 @@ export default function AboutPage() {
               </p>
             </div>
             <div className="rounded-2xl bg-white p-10 shadow-sm ring-1 ring-mist">
-              <h6 className="text-sm font-semibold uppercase tracking-widest text-brand">
-                Our Vision
-              </h6>
-              <h6 className="mt-2 text-xl font-bold text-ink">
+              <SectionLabel>Our Vision</SectionLabel>
+              <h3 className="mt-2 text-xl font-bold text-ink">
                 Recognized Leading Professional Cleaners
-              </h6>
+              </h3>
               <p className="mt-4 leading-8">
                 Our vision is to be recognized as the leading provider of
                 professional cleaning service in Kochi and beyond, setting the

@@ -54,14 +54,14 @@ export default function ContactPage() {
             <div className="flex h-12 w-12 items-center justify-center rounded-full bg-brand text-white">
               <LocationIcon className="h-6 w-6" />
             </div>
-            <h5 className="mt-4 text-lg font-bold">Address</h5>
+            <h3 className="mt-4 text-lg font-bold">Address</h3>
             <p className="mt-2 leading-7">{ADDRESS}</p>
           </div>
           <div className="rounded-2xl bg-mist p-8">
             <div className="flex h-12 w-12 items-center justify-center rounded-full bg-brand text-white">
               <MailIcon className="h-6 w-6" />
             </div>
-            <h5 className="mt-4 text-lg font-bold">Mail Us</h5>
+            <h3 className="mt-4 text-lg font-bold">Mail Us</h3>
             <a
               href={`mailto:${EMAIL}`}
               className="mt-2 inline-block leading-7 text-brand hover:underline"
@@ -118,7 +118,7 @@ export default function ContactPage() {
               >
                 <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
               </svg>
-              <h5 className="text-lg font-semibold">{p}</h5>
+              <h3 className="text-lg font-semibold">{p}</h3>
             </div>
           ))}
         </div>

@@ -106,7 +106,7 @@ export default function CommercialPage() {
         <div className="relative mx-auto max-w-7xl px-4 py-20 lg:py-28 text-center">
           <SectionLabel>Commercial Cleaning</SectionLabel>
           <h1 className="mt-3 text-4xl sm:text-5xl font-extrabold text-white">
-            We Service To Make Your Place Shine
+            Your Premier Destination for Commercial Cleaning in Kerala
           </h1>
           <div className="mx-auto mt-10 grid max-w-4xl grid-cols-3 gap-4">
             {AREAS.map((a) => (
@@ -115,7 +115,7 @@ export default function CommercialPage() {
                 className="flex flex-col items-center gap-3 rounded-2xl bg-white/10 p-6 backdrop-blur"
               >
                 <a.Icon className="h-12 w-12 text-white" />
-                <h5 className="font-semibold text-white text-center text-lg">{a.label}</h5>
+                <h2 className="font-semibold text-white text-center text-lg">{a.label}</h2>
               </div>
             ))}
           </div>
@@ -127,9 +127,9 @@ export default function CommercialPage() {
         <div className="grid items-center gap-12 lg:grid-cols-2">
           <div>
             <SectionLabel>We Cover All Your Needs</SectionLabel>
-            <h1 className="mt-2 text-3xl sm:text-4xl font-bold leading-snug">
-              Your Premier Destination for Commercial Cleaning in Kerala
-            </h1>
+            <h2 className="mt-2 text-3xl sm:text-4xl font-bold leading-snug">
+              We Service To Make Your Place Shine
+            </h2>
             <p className="mt-5 leading-8">
               In the bustling business landscape of Kerala, maintaining a clean
               and inviting commercial space is paramount. One End Solution, a

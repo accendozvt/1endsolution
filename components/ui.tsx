@@ -50,7 +50,7 @@ export function PromiseCard({
       <div className="flex h-20 w-20 items-center justify-center rounded-full bg-mist">
         <Image src={icon} alt="" width={48} height={48} className="h-12 w-12 object-contain" />
       </div>
-      <h5 className="text-lg font-semibold text-ink">{title}</h5>
+      <h3 className="text-lg font-semibold text-ink">{title}</h3>
     </div>
   );
 }

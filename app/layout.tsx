@@ -20,10 +20,8 @@ const jakarta = Plus_Jakarta_Sans({
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  icons: {
-    icon: "/images/cropped-one-end-logo-1-Small-Copy-Copy.png",
-    apple: "/images/cropped-one-end-logo-1-Small-Copy-Copy.png",
-  },
+  // favicon.ico / icon.png / apple-icon.png are auto-detected from app/ —
+  // see seo-audit/scripts/generate-icons.js to regenerate them.
   ...buildMetadata({
     title: "One End Solution — Best Deep Cleaning Service in Kochi",
     description:
@@ -95,8 +93,16 @@ export default function RootLayout({
   return (
     <html lang="en-IN" className={`${inter.variable} ${jakarta.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col">
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:rounded-full focus:bg-brand focus:px-5 focus:py-3 focus:text-sm focus:font-semibold focus:text-white focus:shadow-lg"
+        >
+          Skip to content
+        </a>
         <Header />
-        <main className="flex-1">{children}</main>
+        <main id="main-content" className="flex-1">
+          {children}
+        </main>
         <Footer />
         <WhatsAppFloat />
         <script

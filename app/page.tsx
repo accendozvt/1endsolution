@@ -347,9 +347,9 @@ export default function HomePage() {
                 />
               </div>
               <div className="p-8">
-                <h4 className="text-2xl font-bold">
+                <h3 className="text-2xl font-bold">
                   Residential Cleaning &amp; Maintenance
-                </h4>
+                </h3>
                 <p className="mt-4 leading-7">
                   One End Solution stands out as the best choice for residential
                   cleaning services around Ernakulam, delivering exceptional
@@ -378,9 +378,9 @@ export default function HomePage() {
                 />
               </div>
               <div className="p-8">
-                <h4 className="text-2xl font-bold">
+                <h3 className="text-2xl font-bold">
                   Commercial Cleaning &amp; Maintenance
-                </h4>
+                </h3>
                 <p className="mt-4 leading-7">
                   One End Solution has established itself as the best provider of
                   commercial cleaning services, setting the standard for
@@ -485,7 +485,7 @@ export default function HomePage() {
 
       {/* Find us on */}
       <section className="mx-auto max-w-7xl px-4 py-14 text-center">
-        <h4 className="text-2xl font-bold">Find Us On</h4>
+        <h3 className="text-2xl font-bold">Find Us On</h3>
         <div className="mt-6 flex justify-center gap-4">
           <a
             href={SOCIALS.facebook}
