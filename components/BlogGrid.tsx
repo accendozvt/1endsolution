@@ -51,7 +51,7 @@ export default function BlogGrid({ posts }: { posts: BlogPost[] }) {
               {post.title}
             </h2>
             <p className="mt-3 flex-1 text-sm leading-6 text-body">{post.excerpt}</p>
-            <div className="mt-5 flex items-center justify-between text-xs text-body/70">
+            <div className="mt-5 flex items-center justify-between text-xs text-body">
               <time dateTime={post.publishedDate}>{formatDate(post.publishedDate)}</time>
               <span>{readTimeMinutes(post.body)} min read</span>
             </div>

@@ -111,7 +111,7 @@ export default async function BlogPostPage({
               Blog
             </Link>
           </nav>
-          <SectionLabel>{post.category} Cleaning</SectionLabel>
+          <SectionLabel tone="onDark">{post.category} Cleaning</SectionLabel>
           <h1 className="mt-3 text-3xl sm:text-4xl font-extrabold leading-tight text-white">
             {post.title}
           </h1>

@@ -83,7 +83,7 @@ export default function HomePage() {
         <div className="absolute inset-0 bg-ink/45" />
         <div className="relative mx-auto max-w-7xl px-4 py-24 lg:py-36">
           <div className="max-w-3xl">
-            <SectionLabel>One End Solution · Kochi, Kerala</SectionLabel>
+            <SectionLabel tone="onDark">One End Solution · Kochi, Kerala</SectionLabel>
             <h1 className="mt-4 text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight text-white">
               Professional Housekeeping &amp; Best Deep Cleaning Service{" "}
               <span className="text-brand-light">in Kochi, Kerala.</span>
@@ -179,6 +179,7 @@ export default function HomePage() {
                 src="/images/IMG-20220626-WA0024.jpg"
                 alt="Deep cleaning service in Kochi by One End Solution"
                 fill
+                quality={70}
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover"
               />
@@ -315,6 +316,7 @@ export default function HomePage() {
                 src="/images/IMG-20220526-WA0088.jpg"
                 alt="One End Solution cleaning professional"
                 fill
+                quality={70}
                 sizes="(max-width: 640px) 100vw, 25vw"
                 className="object-cover"
               />
@@ -324,6 +326,7 @@ export default function HomePage() {
                 src="/images/IMG-20220526-WA0089.jpg"
                 alt="Deep cleaning in progress"
                 fill
+                quality={70}
                 sizes="(max-width: 640px) 100vw, 25vw"
                 className="object-cover"
               />
@@ -342,6 +345,7 @@ export default function HomePage() {
                   src="/images/IMG-20220129-WA0030.jpg"
                   alt="Residential cleaning and maintenance in Ernakulam"
                   fill
+                  quality={70}
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   className="object-cover"
                 />
@@ -373,6 +377,7 @@ export default function HomePage() {
                   src="/images/IMG-20220526-WA0079.jpg"
                   alt="Commercial cleaning and maintenance in Kerala"
                   fill
+                  quality={70}
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   className="object-cover"
                 />
@@ -474,6 +479,7 @@ export default function HomePage() {
                   src={`/images/${name}.jpg`}
                   alt="One End Solution cleaning work in Kochi"
                   fill
+                  quality={65}
                   sizes="(max-width: 640px) 50vw, (max-width: 1024px) 25vw, 200px"
                   className="object-cover transition duration-300 hover:scale-110"
                 />

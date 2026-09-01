@@ -1,9 +1,21 @@
 import Image from "next/image";
 import { WhatsAppIcon } from "./Header";
 
-export function SectionLabel({ children }: { children: React.ReactNode }) {
+export function SectionLabel({
+  children,
+  tone = "brand",
+}: {
+  children: React.ReactNode;
+  /** Use "onDark" on a solid dark section — --color-brand only clears
+   * 4.5:1 against light backgrounds; brand-light clears 4.5:1 on ink. */
+  tone?: "brand" | "onDark";
+}) {
   return (
-    <p className="text-sm font-semibold uppercase tracking-widest text-brand">
+    <p
+      className={`text-sm font-semibold uppercase tracking-widest ${
+        tone === "onDark" ? "text-brand-light" : "text-brand"
+      }`}
+    >
       {children}
     </p>
   );
@@ -48,7 +60,7 @@ export function PromiseCard({
   return (
     <div className="flex flex-col items-center gap-4 rounded-2xl bg-white p-8 text-center shadow-sm ring-1 ring-mist transition hover:shadow-md">
       <div className="flex h-20 w-20 items-center justify-center rounded-full bg-mist">
-        <Image src={icon} alt="" width={48} height={48} className="h-12 w-12 object-contain" />
+        <Image src={icon} alt="" width={48} height={48} sizes="48px" className="h-12 w-12 object-contain" />
       </div>
       <h3 className="text-lg font-semibold text-ink">{title}</h3>
     </div>

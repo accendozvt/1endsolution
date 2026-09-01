@@ -114,7 +114,7 @@ export default function ResidentialPage() {
         />
         <div className="absolute inset-0 bg-ink/45" />
         <div className="relative mx-auto max-w-7xl px-4 py-20 lg:py-28 text-center">
-          <SectionLabel>Residential Cleaning</SectionLabel>
+          <SectionLabel tone="onDark">Residential Cleaning</SectionLabel>
           <h1 className="mt-3 text-4xl sm:text-5xl font-extrabold text-white">
             Residential Cleaning in Kerala
           </h1>
@@ -157,6 +157,7 @@ export default function ResidentialPage() {
               src="/images/IMG-20220309-WA0084.jpg"
               alt="Deep house cleaning in Kochi"
               fill
+              quality={70}
               sizes="(max-width: 1024px) 100vw, 50vw"
               className="object-cover"
             />

@@ -7,7 +7,7 @@ const WORDMARK_PATH = path.join(ROOT, "public/images/one-end-logo-1-Copy-2.png")
 const APP_DIR = path.join(ROOT, "app");
 const ICONS_DIR = path.join(ROOT, "public/icons");
 
-const BRAND_BG = "#00ac97";
+const BRAND_BG = "#007f70"; // matches --color-brand in app/globals.css
 
 // Builds a square "icon" PNG: the transparent logomark centered on a solid
 // brand-colored rounded-square background, sized/padded proportionally.

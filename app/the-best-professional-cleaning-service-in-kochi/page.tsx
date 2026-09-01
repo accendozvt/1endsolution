@@ -38,7 +38,7 @@ export default function AboutPage() {
         />
         <div className="absolute inset-0 bg-ink/45" />
         <div className="relative mx-auto max-w-7xl px-4 py-20 lg:py-28 text-center">
-          <SectionLabel>About One End Solution</SectionLabel>
+          <SectionLabel tone="onDark">About One End Solution</SectionLabel>
           <h1 className="mt-3 text-4xl sm:text-5xl font-extrabold text-white">
             The Cleaner Team
           </h1>
@@ -54,7 +54,8 @@ export default function AboutPage() {
                 src="/images/IMG-20220526-WA0086.jpg"
                 alt="One End Solution professional cleaner at work"
                 fill
-                sizes="(max-width: 1024px) 100vw, 40vw"
+                priority
+                sizes="(max-width: 1024px) 384px, 40vw"
                 className="object-cover"
               />
             </div>
@@ -235,6 +236,7 @@ export default function AboutPage() {
               src="/images/IMG-20220626-WA0024.jpg"
               alt="Our cleaning experts at work"
               fill
+              quality={70}
               sizes="(max-width: 1024px) 100vw, 50vw"
               className="object-cover"
             />

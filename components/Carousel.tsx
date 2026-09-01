@@ -41,6 +41,7 @@ export default function Carousel({
               src={it.src}
               alt={alt}
               fill
+              quality={70}
               sizes="(max-width: 640px) 60vw, 420px"
               className="object-cover transition duration-300 hover:scale-105"
             />

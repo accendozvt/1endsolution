@@ -1,8 +1,13 @@
 @import "tailwindcss";
 
 @theme {
-  /* Brand palette — carried over from the original 1endsolution.com theme */
-  --color-brand: #00ac97;
+  /* Brand palette — carried over from the original 1endsolution.com theme.
+     --color-brand darkened from #00ac97 to #007f70 (same hue/saturation,
+     lower lightness) — the original only reached 2.85:1 contrast against
+     white/mist backgrounds at body-text sizes; WCAG AA needs 4.5:1. This
+     is the minimal darkening that clears 4.5:1 against every real
+     background it's paired with (white, mist, cloud) in the codebase. */
+  --color-brand: #007f70;
   --color-brand-light: #30c7b5;
   --color-ink: #14261c;
   --color-body: #4f5655;

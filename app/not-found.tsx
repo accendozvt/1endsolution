@@ -23,7 +23,7 @@ export default function NotFound() {
   return (
     <section className="bg-ink">
       <div className="mx-auto max-w-3xl px-4 py-24 text-center">
-        <SectionLabel>404 Error</SectionLabel>
+        <SectionLabel tone="onDark">404 Error</SectionLabel>
         <h1 className="mt-3 text-5xl sm:text-6xl font-extrabold text-white">
           Page Not Found
         </h1>

@@ -31,6 +31,7 @@ export default function Footer() {
               alt="One End Solution"
               width={180}
               height={45}
+              sizes="144px"
               className="h-9 w-auto"
             />
           </div>

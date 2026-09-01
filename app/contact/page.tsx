@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ContactForm from "@/components/ContactForm";
+import MapFacade from "@/components/MapFacade";
 import { SectionLabel } from "@/components/ui";
 import { MailIcon, PhoneIcon } from "@/components/Header";
 import { buildMetadata, webPageSchema, breadcrumbSchema } from "@/lib/seo";
@@ -30,7 +31,7 @@ export default function ContactPage() {
       {/* Hero */}
       <section className="bg-ink">
         <div className="mx-auto max-w-7xl px-4 py-20 lg:py-24 text-center">
-          <SectionLabel>Contact One End Solution</SectionLabel>
+          <SectionLabel tone="onDark">Contact One End Solution</SectionLabel>
           <h1 className="mt-3 text-4xl sm:text-5xl font-extrabold text-white">
             Contact Us &amp; Enjoy Your Time Off
           </h1>
@@ -88,13 +89,10 @@ export default function ContactPage() {
             </div>
           </div>
           <div className="overflow-hidden rounded-2xl shadow-sm min-h-96">
-            <iframe
+            <MapFacade
               src="https://maps.google.com/maps?q=one%20end%20solution&t=m&z=13&output=embed&iwloc=near"
               title="One End Solution location on Google Maps"
-              className="h-full w-full min-h-96 border-0"
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              allowFullScreen
+              address={ADDRESS}
             />
           </div>
         </div>

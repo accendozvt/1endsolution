@@ -43,7 +43,7 @@ export default function BlogPage() {
     <>
       <section className="bg-ink">
         <div className="mx-auto max-w-7xl px-4 py-20 lg:py-24 text-center">
-          <SectionLabel>One End Solution Blog</SectionLabel>
+          <SectionLabel tone="onDark">One End Solution Blog</SectionLabel>
           <h1 className="mt-3 text-4xl sm:text-5xl font-extrabold text-white">
             Cleaning Tips &amp; Guides for Kochi
           </h1>
