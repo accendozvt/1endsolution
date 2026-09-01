@@ -41,38 +41,62 @@ export default function ContactForm() {
   return (
     <form onSubmit={submit} className="space-y-4">
       <div className="grid gap-4 sm:grid-cols-2">
-        <input
-          type="text"
-          required
-          placeholder="Your Name"
-          value={form.name}
-          onChange={(e) => set("name", e.target.value)}
-          className={inputCls}
-        />
-        <input
-          type="tel"
-          required
-          placeholder="Contact Number"
-          value={form.phone}
-          onChange={(e) => set("phone", e.target.value)}
-          className={inputCls}
-        />
+        <div>
+          <label htmlFor="contact-name" className="sr-only">
+            Your Name
+          </label>
+          <input
+            id="contact-name"
+            type="text"
+            required
+            placeholder="Your Name"
+            value={form.name}
+            onChange={(e) => set("name", e.target.value)}
+            className={inputCls}
+          />
+        </div>
+        <div>
+          <label htmlFor="contact-phone" className="sr-only">
+            Contact Number
+          </label>
+          <input
+            id="contact-phone"
+            type="tel"
+            required
+            placeholder="Contact Number"
+            value={form.phone}
+            onChange={(e) => set("phone", e.target.value)}
+            className={inputCls}
+          />
+        </div>
       </div>
       <div className="grid gap-4 sm:grid-cols-2">
-        <input
-          type="email"
-          placeholder="Email"
-          value={form.email}
-          onChange={(e) => set("email", e.target.value)}
-          className={inputCls}
-        />
-        <input
-          type="text"
-          placeholder="Address"
-          value={form.address}
-          onChange={(e) => set("address", e.target.value)}
-          className={inputCls}
-        />
+        <div>
+          <label htmlFor="contact-email" className="sr-only">
+            Email
+          </label>
+          <input
+            id="contact-email"
+            type="email"
+            placeholder="Email"
+            value={form.email}
+            onChange={(e) => set("email", e.target.value)}
+            className={inputCls}
+          />
+        </div>
+        <div>
+          <label htmlFor="contact-address" className="sr-only">
+            Address
+          </label>
+          <input
+            id="contact-address"
+            type="text"
+            placeholder="Address"
+            value={form.address}
+            onChange={(e) => set("address", e.target.value)}
+            className={inputCls}
+          />
+        </div>
       </div>
       <fieldset className="flex flex-wrap gap-6">
         <legend className="sr-only">Service type</legend>
@@ -81,7 +105,7 @@ export default function ContactForm() {
             type="checkbox"
             checked={form.residential}
             onChange={(e) => set("residential", e.target.checked)}
-            className="h-4 w-4 accent-[#00ac97]"
+            className="h-4 w-4 accent-[#007f70]"
           />
           Residential Cleaning
         </label>
@@ -90,18 +114,24 @@ export default function ContactForm() {
             type="checkbox"
             checked={form.commercial}
             onChange={(e) => set("commercial", e.target.checked)}
-            className="h-4 w-4 accent-[#00ac97]"
+            className="h-4 w-4 accent-[#007f70]"
           />
           Commercial Cleaning
         </label>
       </fieldset>
-      <textarea
-        rows={4}
-        placeholder="Message"
-        value={form.message}
-        onChange={(e) => set("message", e.target.value)}
-        className={inputCls}
-      />
+      <div>
+        <label htmlFor="contact-message" className="sr-only">
+          Message
+        </label>
+        <textarea
+          id="contact-message"
+          rows={4}
+          placeholder="Message"
+          value={form.message}
+          onChange={(e) => set("message", e.target.value)}
+          className={inputCls}
+        />
+      </div>
       <button
         type="submit"
         className="inline-flex items-center gap-2 rounded-full bg-brand px-8 py-3.5 font-semibold text-white shadow-md transition hover:bg-brand-light"

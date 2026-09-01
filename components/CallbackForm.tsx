@@ -15,21 +15,29 @@ export default function CallbackForm() {
 
   return (
     <form onSubmit={submit} className="mt-4 space-y-3">
+      <label htmlFor="callback-name" className="sr-only">
+        Name
+      </label>
       <input
+        id="callback-name"
         type="text"
         required
         value={name}
         onChange={(e) => setName(e.target.value)}
         placeholder="Name"
-        className="w-full rounded-md bg-white/10 border border-white/15 px-3.5 py-2.5 text-sm text-white placeholder:text-white/50 focus:outline-none focus:border-brand-light"
+        className="w-full rounded-md bg-white/10 border border-white/15 px-3.5 py-2.5 text-sm text-white placeholder:text-white/50 focus:outline-none focus:border-brand-light focus:ring-2 focus:ring-brand-light"
       />
+      <label htmlFor="callback-number" className="sr-only">
+        Contact Number
+      </label>
       <input
+        id="callback-number"
         type="tel"
         required
         value={number}
         onChange={(e) => setNumber(e.target.value)}
         placeholder="Contact Number"
-        className="w-full rounded-md bg-white/10 border border-white/15 px-3.5 py-2.5 text-sm text-white placeholder:text-white/50 focus:outline-none focus:border-brand-light"
+        className="w-full rounded-md bg-white/10 border border-white/15 px-3.5 py-2.5 text-sm text-white placeholder:text-white/50 focus:outline-none focus:border-brand-light focus:ring-2 focus:ring-brand-light"
       />
       <button
         type="submit"
